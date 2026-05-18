@@ -1478,7 +1478,7 @@ button {
     top: auto !important;
     bottom: auto !important;
     width: 100%;
-    height: 370px;
+    height: 555px;
   }
 
   .hero-triangle canvas,
@@ -1611,6 +1611,11 @@ button {
     height: auto !important;
   }
 
+  /* Concept boards use only absolute children — aspect-ratio restores their height */
+  .forum-concept-board {
+    aspect-ratio: 1.1;
+  }
+
   .project-module img {
     height: auto !important;
   }
@@ -1672,7 +1677,7 @@ button {
   }
 
   .hero-triangle {
-    height: 302px;
+    height: 453px;
   }
 
   .project-hero__title {
