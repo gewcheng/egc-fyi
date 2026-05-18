@@ -1421,6 +1421,7 @@ button {
 
   .project-module > * {
     grid-column: 1 / -1 !important;
+    grid-row: auto !important;
   }
 }
 
@@ -1443,6 +1444,12 @@ button {
     padding-bottom: var(--spacing-m);
   }
 
+  /* Shrink logo to ~60% */
+  #logo-static,
+  #logo-lottie {
+    width: 75px;
+  }
+
   .hero-intro {
     grid-column: 1 / -1;
     gap: var(--spacing-xl);
@@ -1457,11 +1464,27 @@ button {
     width: 100%;
   }
 
+  /* Hero bio-wrap goes full width so the triangle can fill it */
+  .hero-bio-wrap {
+    max-width: none;
+  }
+
+  /* Triangle: in-flow between bio and nav, full width */
   .hero-triangle {
-    width: 240px;
-    top: 80px;
-    left: auto;
-    right: 20px;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100%;
+    height: 220px;
+  }
+
+  .hero-triangle canvas,
+  .hero-triangle img {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .showcase {
@@ -1472,13 +1495,20 @@ button {
   .showcase__image-wrap {
     grid-column: 1;
     border-right: none;
-    border-bottom: var(--border);
+    border-bottom: none;
     padding-right: 0;
-    padding-bottom: var(--spacing-m);
+    padding-bottom: 0;
   }
 
+  /* Maintain 16:9 on showcase images and videos */
   .showcase__image-frame img {
-    height: 260px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .showcase__video {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
   }
 
   .showcase__text {
@@ -1491,12 +1521,9 @@ button {
     display: none;
   }
 
-  /* Always show expanded pill on touch/mobile */
+  /* Hide "Learn more" pill on mobile — show number only */
   .lm__pill {
-    max-width: 220px;
-    opacity: 1;
-    border-width: 1px;
-    padding: 0;
+    display: none !important;
   }
 
   .site-footer {
@@ -1506,24 +1533,25 @@ button {
 
   .footer-about {
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 1;
   }
 
   .footer-mid {
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 2;
   }
 
   .footer-triangle {
     display: flex;
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 3;
     height: 220px;
+    overflow: hidden;
   }
 
   .footer-copyright {
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 4;
   }
 
   .project-hero__title {
@@ -1565,6 +1593,66 @@ button {
   .project-header__title-area {
     gap: var(--spacing-xl);
     padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xxs);
+  }
+
+  /* Project modules: fix heights and aspect ratios */
+  .project-module {
+    padding: var(--spacing-m) 0;
+  }
+
+  .project-module > div {
+    height: auto !important;
+  }
+
+  .project-module img {
+    height: auto !important;
+  }
+
+  .project-module video {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-module iframe {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    display: block;
+  }
+
+  /* Guidelines frame: override absolute-positioned inner image */
+  .m2020-guidelines-frame {
+    padding: 24px !important;
+    position: static !important;
+  }
+
+  .m2020-guidelines-frame img {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Process diagram: override absolute-positioned inner image */
+  .plaid-process-diagram {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: static !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  .plaid-process-diagram img {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
   }
 }
 
@@ -1578,8 +1666,7 @@ button {
   }
 
   .hero-triangle {
-    width: 160px;
-    top: 60px;
+    height: 180px;
   }
 
   .project-hero__title {
