@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__9aaf61fb-3f1d-4cd8-8428-e0543195f594__get_design_context",
+      "Bash(cp \"/Users/elenagilchang/Downloads/egc-logo.json\" \"/Users/elenagilchang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Personal/EGC website 2026/Build design portfolio website/assets/egc-logo.json\" && mkdir -p \"/Users/elenagilchang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Personal/EGC website 2026/Build design portfolio website/assets/videos\")",
+      "Bash(curl -sI \"https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js\")",
+      "Bash(python3 -c ' *)",
+      "WebFetch(domain:my.spline.design)",
+      "mcp__9aaf61fb-3f1d-4cd8-8428-e0543195f594__get_screenshot"
+    ]
+  }
+}
