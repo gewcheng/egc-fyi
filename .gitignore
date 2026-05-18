@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Videos are hosted on Cloudflare (videos.egc.fyi) — do not commit locally
+assets/videos/
