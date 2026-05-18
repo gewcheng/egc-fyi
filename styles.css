@@ -8,41 +8,42 @@
 /* ── Google Fonts fallbacks (active until PP fonts are added) ── */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400&family=DM+Sans:wght@200;300;400;500;600&display=swap');
 
-/* ── Uncomment when PP font files are in assets/fonts/ ──────── */
-/*
+/* ── PP font files (OTF) ─────────────────────────────────────── */
 @font-face {
   font-family: 'PP Writer';
-  src: url('assets/fonts/PPWriter-Thin.woff2') format('woff2'),
-       url('assets/fonts/PPWriter-Thin.woff') format('woff');
-  font-weight: 100;
+  src: url('assets/fonts/PPWriter-Thin.otf') format('opentype');
+  font-weight: 100 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'PP Mori';
-  src: url('assets/fonts/PPMori-Extralight.woff2') format('woff2'),
-       url('assets/fonts/PPMori-Extralight.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'PP Mori';
-  src: url('assets/fonts/PPMori-Regular.woff2') format('woff2'),
-       url('assets/fonts/PPMori-Regular.woff') format('woff');
+  src: url('assets/fonts/PPMori-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'PP Mori';
-  src: url('assets/fonts/PPMori-SemiBold.woff2') format('woff2'),
-       url('assets/fonts/PPMori-SemiBold.woff') format('woff');
+  src: url('assets/fonts/PPMori-Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
-*/
+@font-face {
+  font-family: 'PP Mori';
+  src: url('assets/fonts/PPMori-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Mori';
+  src: url('assets/fonts/PPMori-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* ============================================================
    CSS Custom Properties
@@ -1677,7 +1678,8 @@ button {
   }
 
   .hero-triangle {
-    height: 453px;
+    height: auto;
+    aspect-ratio: 563 / 514;
   }
 
   .project-hero__title {
