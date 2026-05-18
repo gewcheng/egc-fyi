@@ -6,7 +6,13 @@
       "Bash(curl -sI \"https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js\")",
       "Bash(python3 -c ' *)",
       "WebFetch(domain:my.spline.design)",
-      "mcp__9aaf61fb-3f1d-4cd8-8428-e0543195f594__get_screenshot"
+      "mcp__9aaf61fb-3f1d-4cd8-8428-e0543195f594__get_screenshot",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --title 'Remove spaces around em dashes' --body ' *)",
+      "Bash(/usr/local/bin/gh --version)",
+      "Bash(/opt/homebrew/bin/gh --version)"
     ]
   }
 }
