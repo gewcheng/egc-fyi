@@ -18,6 +18,13 @@
 }
 @font-face {
   font-family: 'PP Mori';
+  src: url('assets/fonts/PPMori-Extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PP Mori';
   src: url('assets/fonts/PPMori-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
@@ -805,14 +812,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(45, 41, 38, 0.82);
-  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.5);
   font-family: var(--font-body);
   font-size: var(--text-h5);
   font-weight: var(--weight-semibold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-taupe-400);
+  color: var(--color-taupe-700);
   opacity: 0;
   transition: opacity var(--transition-medium);
   pointer-events: none;
