@@ -64,10 +64,19 @@
 
     // ── Scene & camera ────────────────────────────────────────────
     var scene  = new THREE.Scene();
-    // Aspect is dynamic — recomputed on every resize.
+    var VFOV_RAD = 25 * Math.PI / 180;
+    // Max horizontal half-extent of the geometry (border outerV ≈ ±250, group scale 1.1).
+    var TRI_HALF_W = 275;
+    // Move camera back so the triangle always fits horizontally at any aspect ratio.
+    function fitCameraZ(w, h) {
+      var aspect = w / h;
+      var zH = TRI_HALF_W / (Math.tan(VFOV_RAD / 2) * aspect) * 1.1;
+      camera.aspect = aspect;
+      camera.position.z = Math.max(1400, zH);
+      camera.updateProjectionMatrix();
+    }
     var camera = new THREE.PerspectiveCamera(25, sz.w / sz.h, 1, 3000);
-    // z=1400 keeps the triangle well within the wider/taller frustum.
-    camera.position.set(0, 0, 1400);
+    fitCameraZ(sz.w, sz.h);
 
     // ── Lights ────────────────────────────────────────────────────
     // Ambient 0.40: combined with emissive on body, sides read as
@@ -125,6 +134,7 @@
 
     var borderMat = new THREE.MeshStandardMaterial({
       color: 0xe7dbd0, roughness: 0.60, metalness: 0.0,
+      side: THREE.DoubleSide,
     });
 
     // ── Assemble ──────────────────────────────────────────────────
@@ -211,8 +221,7 @@
     window.addEventListener('resize', function () {
       var s = getSize();
       renderer.setSize(s.w, s.h);
-      camera.aspect = s.w / s.h;
-      camera.updateProjectionMatrix();
+      fitCameraZ(s.w, s.h);
     });
 
     // ── Render loop ───────────────────────────────────────────────

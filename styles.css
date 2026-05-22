@@ -344,7 +344,7 @@ button {
   height: 120px;
   border-bottom: var(--border);
   position: relative;
-  z-index: 1; /* sit above the hero-triangle canvas */
+  z-index: 1;
 }
 
 .site-logo-link {
@@ -510,7 +510,8 @@ button {
   width: 620px;
   height: auto;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .hero-triangle img {
@@ -893,6 +894,11 @@ button {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-triangle:hover {
+  opacity: 0.8;
 }
 
 .footer-triangle img {
@@ -923,7 +929,7 @@ button {
   font-family: var(--font-ui);
   font-size: var(--text-body);
   font-weight: var(--weight-regular);
-  line-height: var(--lh-ui);
+  line-height: var(--lh-body);
   color: var(--color-taupe-400);
 }
 
