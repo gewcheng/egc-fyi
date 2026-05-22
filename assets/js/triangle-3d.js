@@ -64,15 +64,14 @@
 
     // ── Scene & camera ────────────────────────────────────────────
     var scene  = new THREE.Scene();
-    var VFOV_RAD = 25 * Math.PI / 180;
-    // Max horizontal half-extent of the geometry (border outerV ≈ ±250, group scale 1.1).
-    var TRI_HALF_W = 275;
-    // Move camera back so the triangle always fits horizontally at any aspect ratio.
+    // z=1400 was calibrated for the 620px desktop container width.
+    // On narrower viewports scale the camera back proportionally so the
+    // triangle always fits horizontally without affecting the desktop size.
+    var DESIGN_W = 620;
+    var DESIGN_Z = 1400;
     function fitCameraZ(w, h) {
-      var aspect = w / h;
-      var zH = TRI_HALF_W / (Math.tan(VFOV_RAD / 2) * aspect) * 1.1;
-      camera.aspect = aspect;
-      camera.position.z = Math.max(1400, zH);
+      camera.aspect = w / h;
+      camera.position.z = w >= DESIGN_W ? DESIGN_Z : DESIGN_Z * (DESIGN_W / w);
       camera.updateProjectionMatrix();
     }
     var camera = new THREE.PerspectiveCamera(25, sz.w / sz.h, 1, 3000);
