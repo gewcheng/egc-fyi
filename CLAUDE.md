@@ -161,3 +161,8 @@ Rebuild `index.html` from scratch using the Figma design (node 54:160). Pull lay
 - **Always check Figma** before writing any text, layout dimensions, or spacing values
 - **No frameworks.** Vanilla HTML/CSS/JS only
 - **Images:** Use `placehold.co` placeholders until real assets are provided. Match dimensions from Figma exactly
+
+## Git workflow
+- Always work directly on the main branch
+- Do not create new branches or pull requests
+- Do not commit automatically — wait for me to review and commit manually
